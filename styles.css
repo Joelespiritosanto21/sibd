@@ -76,9 +76,9 @@ h1 {
 }
 
 .content.show {
-    max-height: 500px; /* Altura máxima para o conteúdo visível */
+    max-height: 80%; /* Altura máxima para o conteúdo visível */
     opacity: 1; /* Torna visível */
-    display: block;
+    display: flex;
 }
 
 /* Adiciona um estilo visual de transição para mostrar/esconder o conteúdo */
