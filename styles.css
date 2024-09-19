@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Cor de fundo escura, mas não completamente preta */
+    color: #e0e0e0; /* Cor do texto em um tom claro para contraste */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1e1e1e; /* Fundo um pouco mais claro que o fundo do body */
+    border-radius: 8px;
+}
+
+h1 {
+    color: #f0f0f0; /* Cor do título em um tom claro */
+    text-align: center;
+    font-size: 2em; /* Tamanho do texto do título */
+}
+
+.tree {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tree > li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #2c2c2c; /* Cor de fundo dos itens da árvore */
+    border-radius: 8px;
+    border: 1px solid #333; /* Borda em um tom de cinza escuro */
+    position: relative;
+}
+.content li {
+    list-style-type: none;
+    margin-bottom: 1rem;
+}
+.content li::before {
+    content: "✔️ ";
+}
+
+/* Estilos para os botões de toggle */
+.toggle-btn {
+    background-color: #333; /* Cor de fundo dos botões */
+    color: #e0e0e0; /* Cor do texto dos botões */
+    border: none;
+    border-radius: 50%;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s; /* Adiciona transição suave */
+    margin-right: 10px;
+}
+
+.toggle-btn:hover {
+    background-color: #444; /* Cor dos botões ao passar o cursor */
+}
+
+.toggle-btn.open {
+    background-color: #666; /* Cor para indicar que a seção está aberta */
+}
+
+/* Estilos para o conteúdo escondido */
+.content {
+    overflow: hidden;
+    padding: 10px 20px;
+    background-color: #2c2c2c; /* Cor de fundo do conteúdo */
+    border-radius: 8px; 
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out; /* Transição suave */
+    max-height: 0; /* Inicia com altura 0 */
+    opacity: 0; /* Inicia invisível */
+    display: none;
+}
+
+.content.show {
+    max-height: 500px; /* Altura máxima para o conteúdo visível */
+    opacity: 1; /* Torna visível */
+    display: block;
+}
+
+/* Adiciona um estilo visual de transição para mostrar/esconder o conteúdo */
+.tree li:hover {
+    background-color: #333; /* Cor de fundo ao passar o cursor sobre o item */
+    transition: background-color 0.3s ease-in-out;
+}
