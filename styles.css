@@ -18,11 +18,12 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 85%;
     margin: 20px auto;
     padding: 20px;
     background-color: #1e1e1ea1; /* Fundo um pouco mais claro que o fundo do body */
     border-radius: 8px;
+    text-align: justify;
 }
 
 h1 {
