@@ -12,17 +12,17 @@ body {
 }
 
 .title-image {
-    margin: -15px auto;
+    margin: -0.9375rem auto; /* -15px */
     height: 3rem;
     width: 3rem;
 }
 
 .container {
     max-width: 85%;
-    margin: 20px auto;
-    padding: 20px;
+    margin: 1.25rem auto; /* 20px */
+    padding: 1.25rem; /* 20px */
     background-color: #1e1e1ea1; /* Fundo um pouco mais claro que o fundo do body */
-    border-radius: 8px;
+    border-radius: 0.5rem; /* 8px */
     text-align: justify;
 }
 
@@ -30,7 +30,7 @@ h1 {
     color: #f0f0f0; /* Cor do título em um tom claro */
     margin-top: 0;
     text-align: center;
-    font-size: 2em; /* Tamanho do texto do título */
+    font-size: 2rem; /* 32px */
 }
 
 .tree {
@@ -39,11 +39,11 @@ h1 {
 }
 
 .tree > li {
-    margin: 12px 0;
-    padding: 10px;
+    margin: 0.75rem 0; /* 12px */
+    padding: 0.625rem; /* 10px */
     background-color: #2c2c2c62; /* Cor de fundo dos itens da árvore */
-    border-radius: 8px;
-    border: 1px solid #333; /* Borda em um tom de cinza escuro */
+    border-radius: 0.5rem; /* 8px */
+    border: 0.0625rem solid #333; /* 1px */
     position: relative;
 }
 
@@ -70,12 +70,12 @@ h1 {
     color: #e0e0e0; /* Cor do texto dos botões */
     border: none;
     border-radius: 50%;
-    padding: 8px 12px;
+    padding: 0.5rem 0.75rem; /* 8px 12px */
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem; /* 16px */
     transition: background-color 0.3s, transform 0.3s; /* Adiciona transição suave */
-    margin-right: 10px;
-    margin-bottom: 10px;
+    margin-right: 0.625rem; /* 10px */
+    margin-bottom: 0.625rem; /* 10px */
 }
 
 .toggle-btn:hover {
@@ -89,9 +89,9 @@ h1 {
 /* Estilos para o conteúdo escondido */
 .content {
     overflow: hidden;
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem; /* 10px 20px */
     background-color: #2c2c2c; /* Cor de fundo do conteúdo */
-    border-radius: 8px;
+    border-radius: 0.5rem; /* 8px */
     transition: max-height 0.18s ease-out, opacity 0.18s ease-out; /* Transição suave mais lenta */
     max-height: 0; /* Inicia com altura 0 */
     opacity: 0; /* Inicia invisível */

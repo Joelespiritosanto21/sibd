@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.textContent = '+';
             } else {
                 content.classList.add('show');
-                content.style.maxHeight = content.scrollHeight + 'px'; // Ajusta a altura máxima para o conteúdo visível
+                content.style.maxHeight = content.scrollHeight + 'rem'; // Ajusta a altura máxima para o conteúdo visível
                 content.style.opacity = '1';
             }
         });
