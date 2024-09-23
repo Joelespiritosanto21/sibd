@@ -3,6 +3,7 @@ body {
     background-color: #121212; /* Cor de fundo escura, mas não completamente preta */
     background-image: url(./Designer.jpeg);
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     color: #e0e0e0; /* Cor do texto em um tom claro para contraste */
     margin: 0;
@@ -37,7 +38,7 @@ h1 {
 }
 
 .tree > li {
-    margin: 10px 0;
+    margin: 12px 0;
     padding: 10px;
     background-color: #2c2c2c62; /* Cor de fundo dos itens da árvore */
     border-radius: 8px;
@@ -45,8 +46,17 @@ h1 {
     position: relative;
 }
 
+.img-content {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    height: 18rem;
+}
+
 .content li {
     list-style-type: none;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .content li::before {
