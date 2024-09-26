@@ -1,11 +1,39 @@
 body {
     font-family: Arial, sans-serif;
-
+    background-color: black;
     color: #e0e0e0; /* Cor do texto em um tom claro para contraste */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Fica acima de todos os outros elementos */
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Cor de fundo */
+    border-top: 16px solid #3498db; /* Cor da borda superior */
+    border-radius: 50%;
+    width: 100px; /* Largura do círculo */
+    height: 100px; /* Altura do círculo */
+    animation: spin 2s linear infinite; /* Animação de rotação */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 
 .strong {
     margin-bottom: 1rem;
