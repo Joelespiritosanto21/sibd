@@ -27,11 +27,11 @@
     <div id="loading" class="loading-screen">
         <div class="loader"></div>
     </div>
-    <video id="bg-video" autoplay loop
-        onloadeddata="document.getElementById('loading').style.display = 'none'; this.style.display = 'inline';">
+    <video id="bg-video" autoplay loop muted>
         <source src="The Present - CGI Awarded short film (2014).mp4" type="video/mp4">
         Seu navegador não suporta o elemento de vídeo.
     </video>
+
     <div class="container">
         <h1>Evolução dos Sistemas <img class="title-image" src="./document.png"></h1>
         <ul class="tree">
@@ -207,15 +207,13 @@
     </div>
     <script src="./script.js"></script>
     <script>
-        document.getElementById('bg-video').onloadeddata = function () {
-            document.getElementById('loading').style.display = 'none';
-            this.style.display = 'inline';
-
-            window.onload = function () {
+        window.onload = function () {
+            setTimeout(function () {
                 document.getElementById('loading').style.display = 'none';
                 document.getElementById('bg-video').style.display = 'inline';
-            };
+            }, 8000); // 5000 milissegundos = 5 segundos
         };
+
     </script>
 </body>
 
