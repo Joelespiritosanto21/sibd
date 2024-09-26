@@ -1,122 +1,220 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
-    <title>Evolução dos Sistemas</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .content {
-            max-height: 0;
-            opacity: 0;
-            transition: max-height 0.5s ease, opacity 0.5s ease;
-            overflow: hidden;
-        }
-        .content.show {
-            opacity: 1;
-        }
-    </style>
-</head>
-<body class="bg-[#121212] text-[#e0e0e0] m-0 p-0 box-border">
-    <div class="max-w-[85%] mx-auto mt-5 p-5 bg-[#1e1e1ea1] rounded-lg text-justify">
-        <h1 class="text-center text-2xl text-[#f0f0f0] mt-0">
-            Evolução dos Sistemas <img class="w-12 h-12" src="./document.png" alt="Título">
-        </h1>
-        <ul class="list-none p-0">
-            <li class="my-3">
-                <button class="toggle-btn bg-[#333] text-[#e0e0e0] border-none rounded-full py-2 px-3 cursor-pointer text-base transition-colors duration-300 mr-2 mb-2 hover:bg-[#444]">+</button>
-                <span>Sistemas Naturais 🌿</span>
-                <ul class="content p-2.5 bg-[#2c2c2c] rounded-lg">
-                    <li><strong>Ciclos naturais e autorregulação (ex: ciclo da água 🌊)</strong> - Os sistemas naturais referem-se aos processos que ocorrem no meio ambiente sem intervenção humana direta. Um exemplo é o ciclo da água, que envolve a evaporação da água dos oceanos e lagos, a formação de nuvens e a precipitação de volta à Terra. Este ciclo é crucial para manter o equilíbrio ecológico e sustentar a vida.<img src="Designer.jpeg" class="mt-2 w-full h-auto"></li>
-                    <li><strong>Interconexão entre ecossistemas 🌳</strong> - Ecossistemas são comunidades de organismos interagindo entre si e com o ambiente. A interconexão entre diferentes ecossistemas significa que alterações em um ecossistema podem influenciar outros. Por exemplo, a poluição em um rio pode afetar a fauna aquática e, consequentemente, impactar as plantas e animais nos arredores.<img src="Designer.jpeg" class="mt-2 w-full h-auto"></li>
-                </ul>
-            </li>
-            <li class="my-3">
-                <button class="toggle-btn bg-[#333] text-[#e0e0e0] border-none rounded-full py-2 px-3 cursor-pointer text-base transition-colors duration-300 mr-2 mb-2 hover:bg-[#444]">+</button>
-                <span>Sistemas de Troca 💱</span>
-                <ul class="content p-2.5 bg-[#2c2c2c] rounded-lg">
-                    <li><strong>Escambo entre mercadorias nas sociedades primitivas 🏺</strong> - Antes da invenção do dinheiro, as pessoas trocavam bens e serviços diretamente. Este sistema de troca direta, conhecido como escambo, envolvia a troca de itens como alimentos, ferramentas e vestuário, de acordo com as necessidades e disponibilidades de cada parte.</li>
-                    <li><strong>Desenvolvimento do comércio 💰</strong> – Com o tempo, o uso da moeda tornou-se comum, facilitando as transações comerciais. O comércio evoluiu de simples trocas para sistemas organizados de compra e venda, com a criação de mercados, feiras e, mais recentemente, plataformas de comércio online.</li>
-                </ul>
-            </li>
-            <li class="my-3">
-                <button class="toggle-btn bg-[#333] text-[#e0e0e0] border-none rounded-full py-2 px-3 cursor-pointer text-base transition-colors duration-300 mr-2 mb-2 hover:bg-[#444]">+</button>
-                <span>Sistemas de Escrita ✍️</span>
-                <ul class="content p-2.5 bg-[#2c2c2c] rounded-lg">
-                    <li><strong>Primeiros registos em pedra e argila para transações 📜</strong> - A escrita surgiu como uma ferramenta para registrar transações e eventos importantes. Os primeiros registos foram feitos em pedras e placas de argila, ajudando as sociedades antigas a manter um registo preciso das suas atividades e transações comerciais.</li>
-                    <li><strong>Criação de leis e documentação 📚</strong> – Com o desenvolvimento da escrita, tornou-se possível documentar leis, tratados e histórias. Esta inovação permitiu a criação de sistemas legais e a preservação de conhecimento e cultura, facilitando a organização e o progresso das sociedades.</li>
-                </ul>
-            </li>
-            <li class="my-3">
-                <button class="toggle-btn bg-[#333] text-[#e0e0e0] border-none rounded-full py-2 px-3 cursor-pointer text-base transition-colors duration-300 mr-2 mb-2 hover:bg-[#444]">+</button>
-                <span>Sistemas de Governo 🏛️</span>
-                <ul class="content p-2.5 bg-[#2c2c2c] rounded-lg">
-                    <li><strong>Criação de governos organizados (monarquias 👑, repúblicas 🇵🇹)</strong> - Os sistemas de governo são estruturas que regulam a organização e administração de uma sociedade. As monarquias são lideradas por um rei ou rainha, enquanto as repúblicas são dirigidas por líderes eleitos pelo povo. Cada tipo de governo possui seus próprios métodos de administração e tomada de decisões.</li>
-                    <li><strong>Estruturação de sociedades e leis ⚖️</strong> – A estruturação de uma sociedade envolve a criação de instituições, leis e normas que garantem a ordem e o bem-estar da população. As leis regulam diversos aspectos da vida diária e ajudam a resolver conflitos e promover a justiça.</li>
-                </ul>
-            </li>
-            <li class="my-3">
-                <button class="toggle-btn bg-[#333] text-[#e0e0e0] border-none rounded-full py-2 px-3 cursor-pointer text-base transition-colors duration-300 mr-2 mb-2 hover:bg-[#444]">+</button>
-                <span>Sistemas de Moeda 💵</span>
-                <ul class="content p-2.5 bg-[#2c2c2c] rounded-lg">
-                    <li><strong>Introdução da moeda para facilitar trocas comerciais 💳</strong> – A moeda surgiu como uma solução prática para facilitar as transações comerciais, substituindo o escambo. A moeda pode ser em forma de notas, moedas ou, atualmente, até mesmo digital, e ajuda a tornar as trocas comerciais mais eficientes e seguras.</li>
-                    <li><strong>Evolução dos métodos de pagamento 💳</strong> – Com o avanço da tecnologia, os métodos de pagamento evoluíram de simples moedas e notas para cartões de crédito e débito, e mais recentemente, para pagamentos digitais e móveis. Esses métodos oferecem maior comodidade e segurança nas transações financeiras.</li>
-                </ul>
-            </li>
-            <li class="my-3">
-                <button class="toggle-btn bg-[#333] text-[#e0e0e0] border-none rounded-full py-2 px-3 cursor-pointer text-base transition-colors duration-300 mr-2 mb-2 hover:bg-[#444]">+</button>
-                <span>Sistemas de Informação 💻</span>
-                <ul class="content p-2.5 bg-[#2c2c2c] rounded-lg">
-                    <li><strong>Revolução digital com computadores e redes de dados 🌐</strong> – A revolução digital mudou profundamente a forma como armazenamos, processamos e compartilhamos informações. A introdução de computadores e redes de dados possibilitou a comunicação instantânea e o acesso a uma quantidade imensa de informações de qualquer lugar do mundo.</li>
-                    <li><strong>Acesso à informação em larga escala 📊</strong> - Com a expansão da internet e outras tecnologias, o acesso à informação tornou-se mais fácil e rápido. Agora podemos pesquisar na web, interagir em redes sociais e consultar bases de dados e bibliotecas digitais com facilidade.</li>
-                </ul>
-            </li>
-            <li class="my-3">
-                <button class="toggle-btn bg-[#333] text-[#e0e0e0] border-none rounded-full py-2 px-3 cursor-pointer text-base transition-colors duration-300 mr-2 mb-2 hover:bg-[#444]">+</button>
-                <span>Sistemas Educativos 📚</span>
-                <ul class="content p-2.5 bg-[#2c2c2c] rounded-lg">
-                    <li><strong>Desenvolvimento de métodos de ensino e aprendizagem 🏫</strong> - Os sistemas educativos evoluíram ao longo do tempo, passando de tradições orais e ensino informal para instituições formais de ensino, como escolas e universidades. Os métodos de ensino também evoluíram, incorporando novas tecnologias e abordagens pedagógicas.</li>
-                    <li><strong>Educação à distância e online 🎓</strong> - Com a popularização da internet, a educação à distância tornou-se uma alternativa viável para muitos estudantes. Plataformas de ensino online e recursos digitais oferecem oportunidades de aprendizagem flexíveis e acessíveis, permitindo que pessoas de todas as idades e origens tenham acesso à educação.</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const buttons = document.querySelectorAll('.toggle-btn');
-            
-            buttons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const content = this.nextElementSibling.nextElementSibling;
-
-                    // Fecha todos os outros conteúdos
-                    document.querySelectorAll('.content').forEach(otherContent => {
-                        if (otherContent !== content) {
-                            otherContent.classList.remove('show');
-                            otherContent.style.maxHeight = '0';
-                            otherContent.style.opacity = '0';
-                            // Restaura o texto do botão para "+"
-                            const otherButton = otherContent.previousElementSibling.previousElementSibling;
-                            otherButton.textContent = '+';
-                        }
-                    });
-
-                    // Alterna o estado do conteúdo atual
-                    if (content.classList.contains('show')) {
-                        content.classList.remove('show');
-                        content.style.maxHeight = '0';
-                        content.style.opacity = '0';
-                        this.textContent = '+';
-                    } else {
-                        content.classList.add('show');
-                        content.style.maxHeight = content.scrollHeight + 'rem'; // Ajusta a altura máxima para o conteúdo visível
-                        content.style.opacity = '1';
-                        this.textContent = '−'; // Muda o texto para "−" quando aberto
-                    }
-                });
-            });
-        });
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="./favicon.ico">
+        <title>Evolução dos Sistemas</title>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Evolução dos Sistemas <img class="title-image"
+                    src="./document.png"></h1>
+            <ul class="tree">
+                <li>
+                    <button class="toggle-btn"
+                        onclick="toggleSection(this)">+</button>
+                    <span>Sistemas Naturais 🌿</span>
+                    <ul class="content">
+                        <li class="main-text"><strong>Ciclos naturais e autorregulação (ex: ciclo
+                                da água 🌊)</strong> - Os sistemas naturais
+                            referem-se aos processos que ocorrem no meio
+                            ambiente sem intervenção humana direta. Um exemplo é
+                            o ciclo da água, que envolve a evaporação da água
+                            dos oceanos e lagos, a formação de nuvens e a
+                            precipitação de volta à Terra. Este ciclo é crucial
+                            para manter o equilíbrio ecológico e sustentar a
+                            vida.
+                            <img src="Designer.jpeg" class="img-content">
+                        </li>
+                        <li class="main-text"><strong>Interconexão entre ecossistemas 🌳</strong>
+                            - Ecossistemas são comunidades de organismos
+                            interagindo entre si e com o ambiente. A
+                            interconexão entre diferentes ecossistemas significa
+                            que alterações em um ecossistema podem influenciar
+                            outros. Por exemplo, a poluição em um rio pode
+                            afetar a fauna aquática e, consequentemente,
+                            impactar as plantas e animais nos arredores.
+                            <img src="Designer.jpeg" class="img-content">
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="toggle-btn"
+                        onclick="toggleSection(this)">+</button>
+                    <span>Sistemas de Troca 💱</span>
+                    <ul class="content">
+                        <li class="main-text"><strong>Escambo entre mercadorias nas sociedades
+                                primitivas 🏺</strong> - Antes da invenção do
+                            dinheiro, as pessoas trocavam bens e serviços
+                            diretamente. Este sistema de troca direta, conhecido
+                            como escambo, envolvia a troca de itens como
+                            alimentos, ferramentas e vestuário, de acordo com as
+                            necessidades e disponibilidades de cada parte.</li>
+                        <li class="main-text"><strong>Desenvolvimento do comércio 💰</strong> –
+                            Com o tempo, o uso da moeda tornou-se comum,
+                            facilitando as transações comerciais. O comércio
+                            evoluiu de simples trocas para sistemas organizados
+                            de compra e venda, com a criação de mercados, feiras
+                            e, mais recentemente, plataformas de comércio
+                            online.</li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="toggle-btn"
+                        onclick="toggleSection(this)">+</button>
+                    <span>Sistemas de Escrita ✍️</span>
+                    <ul class="content">
+                        <li class="main-text"><strong>Primeiros registos em pedra e argila para
+                                transações 📜</strong> - A escrita surgiu como
+                            uma ferramenta para registrar transações e eventos
+                            importantes. Os primeiros registos foram feitos em
+                            pedras e placas de argila, ajudando as sociedades
+                            antigas a manter um registo preciso das suas
+                            atividades e transações comerciais.</li>
+                        <li class="main-text"><strong>Criação de leis e documentação 📚</strong> –
+                            Com o desenvolvimento da escrita, tornou-se possível
+                            documentar leis, tratados e histórias. Esta inovação
+                            permitiu a criação de sistemas legais e a
+                            preservação de conhecimento e cultura, facilitando a
+                            organização e o progresso das sociedades.</li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="toggle-btn"
+                        onclick="toggleSection(this)">+</button>
+                    <span>Sistemas de Governo 🏛️</span>
+                    <ul class="content">
+                        <li class="main-text"><strong>Criação de governos organizados (monarquias
+                                👑, repúblicas 🇵🇹)</strong> - Os sistemas de
+                            governo são estruturas que regulam a organização e
+                            administração de uma sociedade. As monarquias são
+                            lideradas por um rei ou rainha, enquanto as
+                            repúblicas são dirigidas por líderes eleitos pelo
+                            povo. Cada tipo de governo possui seus próprios
+                            métodos de administração e tomada de decisões.</li>
+                        <li class="main-text"><strong>Estruturação de sociedades e leis
+                                ⚖️</strong> – A estruturação de uma sociedade
+                            envolve a criação de instituições, leis e normas que
+                            garantem a ordem e o bem-estar da população. As leis
+                            regulam diversos aspectos da vida diária e ajudam a
+                            resolver conflitos e promover a justiça.</li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="toggle-btn"
+                        onclick="toggleSection(this)">+</button>
+                    <span>Sistemas de Moeda 💵</span>
+                    <ul class="content">
+                        <li class="main-text"><strong>Introdução da moeda para facilitar trocas
+                                comerciais 💳</strong> – A moeda surgiu como uma
+                            solução prática para facilitar as transações
+                            comerciais, substituindo o escambo. A moeda pode ser
+                            em forma de notas, moedas ou, atualmente, até mesmo
+                            digital, e ajuda a tornar as trocas comerciais mais
+                            eficientes e seguras.</li>
+                        <li class="main-text"><strong>Evolução dos métodos de pagamento
+                                💳</strong> – Com o avanço da tecnologia, os
+                            métodos de pagamento evoluíram de simples moedas e
+                            notas para cartões de crédito e débito, e mais
+                            recentemente, para pagamentos digitais e móveis.
+                            Esses métodos oferecem maior comodidade e segurança
+                            nas transações financeiras.</li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="toggle-btn"
+                        onclick="toggleSection(this)">+</button>
+                    <span>Sistemas de Informação 💻</span>
+                    <ul class="content">
+                        <li class="main-text"><strong>Revolução digital com computadores e redes
+                                de dados 🌐</strong> – A revolução digital mudou
+                            profundamente a forma como armazenamos, processamos
+                            e compartilhamos informações. A introdução de
+                            computadores e redes de dados possibilitou a
+                            comunicação instantânea e o acesso a uma quantidade
+                            imensa de informações de qualquer lugar do
+                            mundo.</li>
+                        <li class="main-text"><strong>Acesso à informação em larga escala
+                                📊</strong> - Com a expansão da internet e
+                            outras tecnologias, o acesso à informação tornou-se
+                            mais fácil e rápido. Agora podemos pesquisar na web,
+                            interagir em redes sociais e consultar bases de
+                            dados e bibliotecas digitais com facilidade.</li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="toggle-btn"
+                        onclick="toggleSection(this)">+</button>
+                    <span>Sistemas de AI e Automação 🤖</span>
+                    <ul class="content">
+                        <li class="main-text"><strong>Inteligência Artificial e automação de
+                                processos ⚙️</strong> – A Inteligência
+                            Artificial (IA) refere-se a sistemas e máquinas que
+                            imitam a inteligência humana para realizar tarefas e
+                            aprender com os dados. A automação, por sua vez,
+                            utiliza IA para realizar processos repetitivos de
+                            forma mais eficiente e precisa, reduzindo a
+                            necessidade de intervenção humana.</li>
+                        <li class="main-text"><strong>Otimização da produção e serviços
+                                🛠️</strong> – A combinação de IA e automação
+                            tem permitido otimizar a produção industrial,
+                            melhorar o atendimento ao cliente e até mesmo
+                            realizar diagnósticos médicos. Estes avanços
+                            tecnológicos aumentam a eficiência e a qualidade dos
+                            produtos e serviços.</li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="toggle-btn"
+                        onclick="toggleSection(this)">+</button>
+                    <span>Sistemas Cibernéticos 🌐</span>
+                    <ul class="content">
+                        <li class="main-text"><strong>Integração entre tecnologia e corpo humano
+                                (próteses 🤖)</strong> – Os sistemas
+                            cibernéticos combinam a tecnologia com o corpo
+                            humano para melhorar a saúde e a qualidade de vida.
+                            Exemplos incluem próteses que restauram funções
+                            físicas e implantes que ajudam a tratar doenças ou
+                            melhorar capacidades.</li>
+                        <li class="main-text"><strong>Avanços em Biotecnologia e conectividade
+                                🔬</strong> – A biotecnologia e a conectividade
+                            têm avançado rapidamente, possibilitando novos
+                            tratamentos médicos e a integração de dispositivos
+                            tecnológicos com o corpo humano. Tecnologias como
+                            sensores de monitoramento da saúde e dispositivos
+                            que permitem a comunicação direta entre biologia e
+                            tecnologia estão a revolucionar o campo da
+                            saúde.</li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="toggle-btn"
+                        onclick="toggleSection(this)">+</button>
+                    <span>Sistemas de Computação Quântica 🧩</span>
+                    <ul class="content">
+                        <li class="main-text"><strong>Computadores quânticos: o futuro da
+                                tecnologia 💡</strong> – A computação quântica
+                            utiliza princípios da mecânica quântica para
+                            realizar cálculos extremamente complexos a uma
+                            velocidade muito superior à dos computadores
+                            tradicionais. Esta tecnologia tem o potencial de
+                            resolver problemas complexos e realizar tarefas que
+                            são impraticáveis com a tecnologia atual.</li>
+                        <li class="main-text"><strong>Potencial para resolver problemas complexos
+                                rapidamente ⚛️</strong> – Computadores quânticos
+                            podem abordar desafios como otimização de processos,
+                            simulações químicas e criptografia avançada. Eles
+                            prometem transformar áreas como a investigação
+                            científica, a segurança de dados e o desenvolvimento
+                            de novos materiais.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <script src="./script.js"></script>
+    </body>
 </html>
+
+Temos que melhorar este texto, falar dos sistemas e do que eles mudam nas pessoas, como alguns sistemas param e para literalmente o mundo inteiro, etc, etc. Tem que mostrar um pouco da realidade
