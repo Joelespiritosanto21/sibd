@@ -7,88 +7,88 @@
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <title>Evolução dos Sistemas</title>
     <link rel="stylesheet" href="./styles.css">
+    <style>
+        /* Estilos para o vídeo de fundo */
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            display: none;
+            /* Oculta o vídeo inicialmente */
+        }
+
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Fundo semi-transparente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            /* Fica acima de todos os outros elementos */
+        }
+
+        .loader {
+            border: 16px solid #f3f3f3;
+            /* Cor de fundo */
+            border-top: 16px solid #3498db;
+            /* Cor da borda superior */
+            border-radius: 50%;
+            width: 100px;
+            /* Largura do círculo */
+            height: 100px;
+            /* Altura do círculo */
+            animation: spin 2s linear infinite;
+            /* Animação de rotação */
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Estilos quando o vídeo estiver em primeiro plano */
+        .foreground {
+            position: fixed;
+            height: 80%;
+            z-index: 999;
+            /* Sobrepõe outros elementos */
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1000;
+            /* Garantir que o footer fique acima do vídeo */
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: aqua;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3498db;
+        }
+    </style>
 </head>
-<style>
-    /* Estilos para o vídeo de fundo */
-    #bg-video {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-        display: none;
-        /* Oculta o vídeo inicialmente */
-    }
-
-    .loading-screen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-        /* Fundo semi-transparente */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 999;
-        /* Fica acima de todos os outros elementos */
-    }
-
-    .loader {
-        border: 16px solid #f3f3f3;
-        /* Cor de fundo */
-        border-top: 16px solid #3498db;
-        /* Cor da borda superior */
-        border-radius: 50%;
-        width: 100px;
-        /* Largura do círculo */
-        height: 100px;
-        /* Altura do círculo */
-        animation: spin 2s linear infinite;
-        /* Animação de rotação */
-    }
-
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-
-    /* Estilos quando o vídeo estiver em primeiro plano */
-    .foreground {
-        position: fixed;
-        height: 80%;
-        z-index: 999;
-        /* Sobrepõe outros elementos */
-    }
-
-    footer {
-        text-align: center;
-        margin-top: 20px;
-        position: relative;
-        z-index: 1000;
-        /* Garantir que o footer fique acima do vídeo */
-    }
-
-    button {
-        padding: 10px 20px;
-        background-color: aqua;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background-color: #3498db;
-    }
-</style>
 
 <body>
     <div id="loading" class="loading-screen">
