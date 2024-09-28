@@ -288,44 +288,59 @@
         </footer>
     </div>
     <script src="./script.js"></script>
-    <script defer>
-        // Function to toggle between background and foreground video
-        document.getElementById('toggle-video-btn').addEventListener('click', function () {
-            var video = document.getElementById('bg-video');
-            var button = document.getElementById('toggle-video-btn');
+    <script>
+        // Espera até que o DOM esteja completamente carregado
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to toggle between background and foreground video
+            document.getElementById('toggle-video-btn').addEventListener('click', function () {
+                var video = document.getElementById('bg-video');
+                var button = document.getElementById('toggle-video-btn');
 
-            // If the video is in the background (without controls), move it to the foreground with controls
-            if (video.classList.contains('foreground')) {
-                video.classList.remove('foreground');
-                video.controls = false; // Disable controls
-                video.style.zIndex = '-1'; // Back to background
-                button.textContent = 'Show Controls'; // Update button text
-            } else {
-                video.classList.add('foreground');
-                video.controls = true; // Enable controls
-                video.style.zIndex = '999'; // On top
-                button.textContent = 'Hide Video'; // Update button text
+                // If the video is in the background (without controls), move it to the foreground with controls
+                if (video.classList.contains('foreground')) {
+                    video.classList.remove('foreground');
+                    video.controls = false; // Disable controls
+                    video.style.zIndex = '-1'; // Back to background
+                    button.textContent = 'Show Controls'; // Update button text
+                } else {
+                    video.classList.add('foreground');
+                    video.controls = true; // Enable controls
+                    video.style.zIndex = '999'; // On top
+                    button.textContent = 'Hide Video'; // Update button text
+                }
+            });
+
+            // Function for the loading screen
+            window.onload = function () {
+                setTimeout(function () {
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('bg-video').style.display = 'inline';
+                }, 1000); // Defina um tempo (ex: 1000 ms)
+            };
+
+            // Set the language select value based on the current page
+            const languageSelect = document.getElementById('language-select');
+            const currentPage = window.location.pathname.split('/').pop();
+            languageSelect.value = currentPage;
+
+            // Add event listener to change language
+            languageSelect.addEventListener('change', function () {
+                window.location.href = this.value;
+            });
+
+            // Function to update dropdown title
+            function updateDropdownTitle() {
+                var dropdown = document.getElementById('language-select');
+                if (dropdown) {
+                    var selectedOption = dropdown.options[dropdown.selectedIndex];
+                    console.log("Título do dropdown atualizado:", selectedOption.text);
+                } else {
+                    console.error("Elemento do dropdown não encontrado.");
+                }
             }
         });
-
-        // Function for the loading screen
-        window.onload = function () {
-            setTimeout(function () {
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('bg-video').style.display = 'inline';
-            },)
-        };
-        // Set the language select value based on the current page
-        const languageSelect = document.getElementById('language-select');
-        const currentPage = window.location.pathname.split('/').pop();
-
-        languageSelect.value = currentPage;
-
-        // Add event listener to change language
-        languageSelect.addEventListener('change', function () {
-            window.location.href = this.value;
-        });
     </script>
+
 </body>
 
 </html>
