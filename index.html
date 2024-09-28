@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
     <title>Evolução dos Sistemas</title>
     <link rel="stylesheet" href="/css/styles.css">
@@ -88,6 +89,9 @@
             background-color: #3498db;
         }
     </style>
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = { "default_language": "pt", "detect_browser_language": true, "languages": ["pt", "fr", "de", "it", "es", "en"], "wrapper_selector": ".gtranslate_wrapper", "switcher_horizontal_position": "right", "switcher_vertical_position": "top", "float_switcher_open_direction": "bottom", "flag_style": "3d" }</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 </head>
 
 <body>
@@ -99,15 +103,6 @@
         Seu navegador não suporta o elemento de vídeo.
     </video>
     <div class="container">
-        <form style="display: flex; justify-content: flex-end;">
-            <select id="language-select" onchange="updateDropdownTitle()"
-                style="padding: 10px 20px; background-color: aquamarine; border: none; border-radius: 5px; cursor: pointer;">
-                <option value="index.html" selected>Português</option>
-                <option value="english.html">English</option>
-                <option value="spanish.html">Español (beta)</option>
-                <option value="french.html">Français (beta)</option>
-            </select>
-        </form>
         <h1>Evolução dos Sistemas <img class="title-image" src="/images/document.png" alt="Document Icon"></h1>
         <ul class="tree">
             <li>
@@ -299,19 +294,20 @@
             <a href="/videos/Present - CGI Awarded short film (2014).mp4" target="_blank"
                 style="text-decoration: none;">
                 <button
-                    style="background: url(download.jpeg); background-size: cover; height: 2rem; width: 8rem; background-repeat: no-repeat;"></button>
+                    style="background: url(/images/download.jpeg); background-size: cover; height: 2rem; width: 8rem; background-repeat: no-repeat;"></button>
             </a>
             <a href="https://mega.nz/file/5qgEgJrY#03b8je_3EdPXLrZXPMY9_hBNw1DcPwH0OWErn0-IFeI" target="_blank"
                 style="text-decoration: none;">
                 <button
-                    style="background: url(mega.png); background-size: cover; height: 2rem; width: 5rem; background-repeat: no-repeat;"></button>
+                    style="background: url(/images/mega.png); background-size: cover; height: 2rem; width: 5rem; background-repeat: no-repeat;"></button>
             </a>
             </li>
         </ul>
         <footer>
             <p>&copy; 2024. Todos os direitos reservados.
                 <a href="https://github.com/Joelespiritosanto21/sibd" target="_blank">
-                    <input type="image" src="github.png" url="https://github.com/Joelespiritosanto21/sibd"
+                    <input type="image" src="/images/github.png" url="https://github.com/Joelespiritosanto21/sibd"
+                        alt="Contribute to this project on github"
                         style="height: 2rem; margin-right: 0rem; margin-left: 80rem;">
                 </a>
             </p>
@@ -349,28 +345,7 @@
                     document.getElementById('bg-video').style.display = 'inline';
                 });
             };
-
-            // Set the language select value based on the current page
-            const languageSelect = document.getElementById('language-select');
-            const currentPage = window.location.pathname.split('/').pop();
-            languageSelect.value = currentPage;
-
-            // Add event listener to change language
-            languageSelect.addEventListener('change', function () {
-                window.location.href = this.value;
-            });
-
         });
-        // Function to update dropdown title
-        function updateDropdownTitle() {
-            var dropdown = document.getElementById('language-select');
-            if (dropdown) {
-                var selectedOption = dropdown.options[dropdown.selectedIndex];
-                console.log("Título do dropdown atualizado:", selectedOption.text);
-            } else {
-                console.error("Elemento do dropdown não encontrado.");
-            }
-        }
     </script>
 
 </body>
