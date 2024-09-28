@@ -8,88 +8,89 @@
     <title>Evolution of Systems</title>
     <link rel="stylesheet" href="./styles.css">
 
-<style>
-    /* Styles for the background video */
-    #bg-video {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-        display: none;
-        /* Hide the video initially */
-    }
-
-    .loading-screen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-        /* Semi-transparent background */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 999;
-        /* Stays above all other elements */
-    }
-
-    .loader {
-        border: 16px solid #f3f3f3;
-        /* Background color */
-        border-top: 16px solid #3498db;
-        /* Top border color */
-        border-radius: 50%;
-        width: 100px;
-        /* Circle width */
-        height: 100px;
-        /* Circle height */
-        animation: spin 2s linear infinite;
-        /* Rotation animation */
-    }
-
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
+    <style>
+        /* Styles for the background video */
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            display: none;
+            /* Hide the video initially */
         }
 
-        100% {
-            transform: rotate(360deg);
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Semi-transparent background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            /* Stays above all other elements */
         }
-    }
 
-    /* Styles when the video is in the foreground */
-    .foreground {
-        position: fixed;
-        height: 80%;
-        z-index: 999;
-        /* Overlaps other elements */
-    }
+        .loader {
+            border: 16px solid #f3f3f3;
+            /* Background color */
+            border-top: 16px solid #3498db;
+            /* Top border color */
+            border-radius: 50%;
+            width: 100px;
+            /* Circle width */
+            height: 100px;
+            /* Circle height */
+            animation: spin 2s linear infinite;
+            /* Rotation animation */
+        }
 
-    footer {
-        text-align: center;
-        margin-top: 20px;
-        position: relative;
-        z-index: 1000;
-        /* Ensure the footer stays above the video */
-    }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
 
-    button {
-        padding: 10px 20px;
-        background-color: aqua;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
 
-    button:hover {
-        background-color: #3498db;
-    }
-</style>
+        /* Styles when the video is in the foreground */
+        .foreground {
+            position: fixed;
+            height: 80%;
+            z-index: 999;
+            /* Overlaps other elements */
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1000;
+            /* Ensure the footer stays above the video */
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: aqua;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3498db;
+        }
+    </style>
 </head>
+
 <body>
     <div id="loading" class="loading-screen">
         <div class="loader"></div>
@@ -315,7 +316,7 @@
                 setTimeout(function () {
                     document.getElementById('loading').style.display = 'none';
                     document.getElementById('bg-video').style.display = 'inline';
-                }, 1000); // Defina um tempo (ex: 1000 ms)
+                });
             };
 
             // Set the language select value based on the current page
