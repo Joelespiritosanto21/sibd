@@ -106,7 +106,7 @@
                 <option value="index.html">Português</option>
                 <option value="english.html">English</option>
                 <option value="spanish.html">Español</option>
-                <option value="french.html">Français</option>
+                <option value="french.html" selected>Français</option>
             </select>
         </form>
         <h1>Évolution des Systèmes <img class="title-image" src="./document.png" alt="Icône de Document"></h1>
@@ -373,17 +373,17 @@
                 window.location.href = this.value;
             });
 
-            // Function to update dropdown title
-            function updateDropdownTitle() {
-                var dropdown = document.getElementById('language-select');
-                if (dropdown) {
-                    var selectedOption = dropdown.options[dropdown.selectedIndex];
-                    console.log("Título do dropdown atualizado:", selectedOption.text);
-                } else {
-                    console.error("Elemento do dropdown não encontrado.");
-                }
-            }
         });
+        // Function to update dropdown title
+        function updateDropdownTitle() {
+            var dropdown = document.getElementById('language-select');
+            if (dropdown) {
+                var selectedOption = dropdown.options[dropdown.selectedIndex];
+                console.log("Título do dropdown atualizado:", selectedOption.text);
+            } else {
+                console.error("Elemento do dropdown não encontrado.");
+            }
+        }
     </script>
 
 </body>
