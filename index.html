@@ -294,6 +294,17 @@
     </div>
     <script src="./script.js"></script>
     <script>
+        // Define the updateDropdownTitle function globally
+        function updateDropdownTitle() {
+            var dropdown = document.getElementById('language-select');
+            if (dropdown) {
+                var selectedOption = dropdown.options[dropdown.selectedIndex];
+                console.log("Título do dropdown atualizado:", selectedOption.text);
+            } else {
+                console.error("Elemento do dropdown não encontrado.");
+            }
+        }
+
         // Espera até que o DOM esteja completamente carregado
         document.addEventListener('DOMContentLoaded', function () {
             // Function to toggle between background and foreground video
@@ -332,17 +343,6 @@
             languageSelect.addEventListener('change', function () {
                 window.location.href = this.value;
             });
-
-            // Function to update dropdown title
-            function updateDropdownTitle() {
-                var dropdown = document.getElementById('language-select');
-                if (dropdown) {
-                    var selectedOption = dropdown.options[dropdown.selectedIndex];
-                    console.log("Título do dropdown atualizado:", selectedOption.text);
-                } else {
-                    console.error("Elemento do dropdown não encontrado.");
-                }
-            }
         });
     </script>
 
