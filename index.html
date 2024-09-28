@@ -98,8 +98,17 @@
         <source src="The Present - CGI Awarded short film (2014).mp4" type="video/mp4">
         Seu navegador não suporta o elemento de vídeo.
     </video>
-
     <div class="container">
+        <form style="display: flex; justify-content: flex-end;">
+            <label for="language-select" style="margin-right: 10px;">Idioma:</label>
+            <select id="language-select"
+                style="padding: 10px 20px; background-color: aquamarine; border: none; border-radius: 5px; cursor: pointer;">
+                <option value="index.html">Português</option>
+                <option value="english.html">English</option>
+                <option value="spanish.html">Español</option>
+                <option value="french.html">Français</option>
+            </select>
+        </form>
         <h1>Evolução dos Sistemas <img class="title-image" src="./document.png" alt="Document Icon"></h1>
         <ul class="tree">
             <li>
@@ -269,8 +278,7 @@
                     </li>
                 </ul>
             </li>
-            <button
-                style="cursor: default;">Opções
+            <button style="cursor: default;">Opções
                 Download: </button>
             <a href="The Present - CGI Awarded short film (2014).mp4" target="_blank"
                 style="text-decoration: none;"><button
@@ -301,7 +309,7 @@
                 video.classList.add('foreground');
                 video.controls = true; // Ativa controles
                 video.style.zIndex = '999'; // Fica no topo
-                button.textContent = 'Ocultar Controles'; // Atualiza texto do botão
+                button.textContent = 'Ocultar Video'; // Atualiza texto do botão
             }
         });
 
@@ -312,6 +320,16 @@
                 document.getElementById('bg-video').style.display = 'inline';
             },)
         };
+        // Set the language select value based on the current page
+        const languageSelect = document.getElementById('language-select');
+        const currentPage = window.location.pathname.split('/').pop();
+
+        languageSelect.value = currentPage;
+
+        // Add event listener to change language
+        languageSelect.addEventListener('change', function () {
+            window.location.href = this.value;
+        });
     </script>
 </body>
 

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <title>Évolution des Systèmes</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<style>
+    /* Styles pour la vidéo de fond */
+    #bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        display: none;
+        /* Cache la vidéo initialement */
+    }
+
+    .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        /* Fond semi-transparent */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        /* Au-dessus de tous les autres éléments */
+    }
+
+    .loader {
+        border: 16px solid #f3f3f3;
+        /* Couleur de fond */
+        border-top: 16px solid #3498db;
+        /* Couleur de la bordure supérieure */
+        border-radius: 50%;
+        width: 100px;
+        /* Largeur du cercle */
+        height: 100px;
+        /* Hauteur du cercle */
+        animation: spin 2s linear infinite;
+        /* Animation de rotation */
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Styles lorsque la vidéo est au premier plan */
+    .foreground {
+        position: fixed;
+        height: 80%;
+        z-index: 999;
+        /* Superpose les autres éléments */
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 20px;
+        position: relative;
+        z-index: 1000;
+        /* Assure que le footer soit au-dessus de la vidéo */
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: aqua;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #3498db;
+    }
+</style>
+
+<body>
+    <div id="loading" class="loading-screen">
+        <div class="loader"></div>
+    </div>
+    <video id="bg-video" autoplay loop muted>
+        <source src="The Present - CGI Awarded short film (2014).mp4" type="video/mp4">
+        Votre navigateur ne supporte pas l'élément vidéo.
+    </video>
+    <div class="container">
+        <form style="display: flex; justify-content: flex-end;">
+            <label for="language-select" style="margin-right: 10px;">Idioma:</label>
+            <select id="language-select"
+                style="padding: 10px 20px; background-color: aquamarine; border: none; border-radius: 5px; cursor: pointer;">
+                <option value="index.html">Português</option>
+                <option value="english.html">English</option>
+                <option value="spanish.html">Español</option>
+                <option value="french.html">Français</option>
+            </select>
+        </form>
+        <h1>Évolution des Systèmes <img class="title-image" src="./document.png" alt="Icône de Document"></h1>
+        <ul class="tree">
+            <li>
+                <button class="toggle-btn" onclick="toggleSection(this)">+</button>
+                <span>Systèmes Naturels 🌿</span>
+                <ul class="content">
+                    <li class="main-text">
+                        <strong>Cycles naturels et autorégulation (ex: cycle de l'eau 🌊)</strong> - Les systèmes
+                        naturels
+                        se réfèrent aux processus qui se produisent dans l'environnement sans intervention humaine
+                        directe. Un exemple
+                        est le cycle de l'eau, crucial pour l'équilibre écologique. Les altérations de ce cycle, comme
+                        celles causées
+                        par les changements climatiques, peuvent entraîner des catastrophes naturelles, impactant la vie
+                        humaine et la
+                        biodiversité.
+                        <img src="ciclo-agua.jpg" class="img-content" alt="Cycle de l'eau">
+                    </li>
+                    <li class="main-text">
+                        <strong>Interconnexion entre écosystèmes 🌳</strong> - Les écosystèmes sont des communautés
+                        d'organismes
+                        interagissant. Par exemple, la pollution d'une rivière peut affecter la faune aquatique et, par
+                        conséquent,
+                        impacter les plantes et les animaux sur les rives. La marée noire de 2010 dans le Golfe du
+                        Mexique est un
+                        exemple de la manière dont un événement peut affecter les écosystèmes et les économies locales,
+                        montrant la
+                        fragilité de l'interconnexion entre les systèmes naturels et les activités humaines.
+                        <img src="interconexões.jpeg" class="img-content" alt="Interconnexion entre écosystèmes">
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <button class="toggle-btn" onclick="toggleSection(this)">+</button>
+                <span>Systèmes d'Échange 💱</span>
+                <ul class="content">
+                    <li class="main-text">
+                        <strong>Troc entre marchandises dans les sociétés primitives 🏺</strong> - Avant l'invention de
+                        l'argent, les gens échangeaient des biens directement. Ce système permettait la survie des
+                        communautés, mais était limité et dépendait du besoin mutuel. De nos jours, des plateformes
+                        d'échange comme OLX et Facebook Marketplace revitalisent cette pratique, permettant aux gens
+                        d'échanger des biens de manière plus organisée et accessible.
+                        <img src="escamboOIP.jpeg" class="img-content" alt="Troc">
+                    </li>
+                    <li class="main-text">
+                        <strong>Développement du commerce 💰</strong> – Le commerce a évolué avec l'utilisation de la
+                        monnaie,
+                        facilitant les transactions. Le commerce en ligne a connu une croissance exponentielle,
+                        notamment pendant la
+                        pandémie de COVID-19, lorsque le commerce physique a été interrompu. Cela a radicalement changé
+                        la manière
+                        dont les gens achètent, soulignant l'importance de systèmes d'échange agiles et efficaces.
+                        <img src="comércio.png" class="img-content" alt="Commerce Actuel">
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <button class="toggle-btn" onclick="toggleSection(this)">+</button>
+                <span>Systèmes d'Écriture ✍️</span>
+                <ul class="content">
+                    <li class="main-text">
+                        <strong>Premiers enregistrements sur pierre et argile pour les transactions 📜</strong> -
+                        L'écriture est apparue pour
+                        enregistrer les transactions. Ce développement a permis la création de civilisations complexes.
+                        Aujourd'hui, la numérisation de l'information, comme la blockchain, transforme la manière dont
+                        nous enregistrons et vérifions les transactions, augmentant la sécurité et la transparence.
+                        <img src="escritaempedra.jpg" class="img-content" alt="Écritures sur Pierre">
+                    </li>
+                    <li class="main-text">
+                        <strong>Création de lois et documentation 📚</strong> – Avec l'écriture, il est devenu possible
+                        de documenter les lois et les traités. Aujourd'hui, le manque de transparence dans les systèmes
+                        juridiques peut conduire à des injustices. Par exemple, des scandales comme l'affaire de
+                        l'Opération Lava Jato au Brésil révèlent comment
+                        des systèmes corrompus peuvent miner la confiance de la population dans les institutions.
+                        <img src="leis.jpeg" class="img-content" alt="Lois, documents et enregistrements">
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <button class="toggle-btn" onclick="toggleSection(this)">+</button>
+                <span>Systèmes de Gouvernement 🏛️</span>
+                <ul class="content">
+                    <li class="main-text">
+                        <strong>Création de gouvernements organisés (monarchies 👑, républiques 🇵🇹)</strong> - Les
+                        systèmes de
+                        gouvernement régulent la société. En période de crise, comme la crise financière de 2008, les
+                        systèmes de
+                        gouvernement doivent répondre rapidement aux besoins de la population, démontrant l'efficacité
+                        ou
+                        l'inefficacité de ces derniers dans le maintien de l'ordre social.
+                    </li>
+                    <li class="main-text">
+                        <strong>Structuration des sociétés et des lois ⚖️</strong> – Les lois garantissent l'ordre.
+                        Cependant,
+                        les défaillances du système juridique, comme les cas d'abus des droits de l'homme dans divers
+                        pays, montrent
+                        comment la mise en œuvre et l'application des lois peuvent échouer, entraînant des conflits et
+                        un mécontentement
+                        social.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <button class="toggle-btn" onclick="toggleSection(this)">+</button>
+                <span>Systèmes Monétaires 💵</span>
+                <ul class="content">
+                    <li class="main-text">
+                        <strong>Introduction de la monnaie pour faciliter les échanges commerciaux 💳</strong> – La
+                        monnaie a facilité
+                        les transactions, remplaçant le troc. Aujourd'hui, la volatilité des cryptomonnaies comme le
+                        Bitcoin
+                        illustre comment de nouveaux systèmes monétaires peuvent défier les économies traditionnelles et
+                        créer
+                        des incertitudes sur le marché financier.
+                    </li>
+                    <li class="main-text">
+                        <strong>Évolution des méthodes de paiement 💳</strong> – Les méthodes de paiement ont évolué
+                        pour
+                        inclure les cartes et les paiements numériques. Pendant la pandémie, l'utilisation des paiements
+                        sans contact
+                        a augmenté, soulignant l'importance de l'adaptabilité des systèmes financiers aux besoins des
+                        personnes.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <button class="toggle-btn" onclick="toggleSection(this)">+</button>
+                <span>Systèmes d'Information 💻</span>
+                <ul class="content">
+                    <li class="main-text">
+                        <strong>Révolution numérique avec les ordinateurs et les réseaux de données 🌐</strong> – La
+                        révolution numérique
+                        a changé la manière dont nous traitons les informations. Par exemple, le scandale de Cambridge
+                        Analytica
+                        illustre comment la manipulation des données peut impacter l'opinion publique et influencer les
+                        élections,
+                        démontrant la responsabilité associée à la gestion des systèmes d'information.
+                    </li>
+                    <li class="main-text">
+                        <strong>Accès à l'information à grande échelle 📊</strong> - Avec Internet, l'accès à
+                        l'information
+                        est devenu facile, mais aussi problématique, avec la diffusion de fausses nouvelles affectant la
+                        perception
+                        publique et la confiance dans les informations vitales.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <button class="toggle-btn" onclick="toggleSection(this)">+</button>
+                <span>Systèmes d'IA et d'Automatisation 🤖</span>
+                <ul class="content">
+                    <li class="main-text">
+                        <strong>Intelligence Artificielle et automatisation des processus ⚙️</strong> – L'IA
+                        révolutionne
+                        la manière dont nous travaillons et vivons. L'automatisation des emplois, comme dans les usines
+                        et les services,
+                        soulève des questions sur l'avenir du travail et la nécessité de requalification professionnelle
+                        pour
+                        les travailleurs affectés.
+                    </li>
+                    <li class="main-text">
+                        <strong>Optimisation de la production et des services 🛠️</strong> – Les avancées comme
+                        l'automatisation des chatbots
+                        améliorent le service client, mais peuvent également entraîner du chômage dans les secteurs
+                        traditionnels. La discussion sur un avenir où les humains et les machines coexistent de manière
+                        équilibrée
+                        est de plus en plus pertinente.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <button class="toggle-btn" onclick="toggleSection(this)">+</button>
+                <span>Systèmes Cybernétiques 🌐</span>
+                <ul class="content">
+                    <li class="main-text">
+                        <strong>Intégration entre technologie et corps humain (prothèses 🤖)</strong> – Les systèmes
+                        cybernétiques améliorent la santé et la qualité de vie. Cependant, des questions éthiques
+                        surgissent avec la
+                        biotechnologie, comme l'utilisation de l'édition génétique (CRISPR) et ses implications
+                        sociales.
+                    </li>
+                    <li class="main-text">
+                        <strong>Avancées en Biotechnologie et connectivité 🔬</strong> – Les dispositifs de surveillance
+                        de
+                        la santé révolutionnent la médecine, mais la confidentialité des données personnelles et la
+                        sécurité
+                        numérique sont des préoccupations croissantes.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <button class="toggle-btn" onclick="toggleSection(this)">+</button>
+                <span>Systèmes de Calcul Quantique 🧩</span>
+                <ul class="content">
+                    <li class="main-text">
+                        <strong>Développement de nouveaux systèmes de calcul (ex: Google et IBM) 🔗</strong> – Le
+                        calcul quantique promet de résoudre des problèmes complexes en un temps record. Cependant, les
+                        implications éthiques et de sécurité sont des sujets de discussion intense, considérant comment
+                        cela
+                        pourrait affecter la cryptographie et la sécurité des données.
+                    </li>
+                    <li class="main-text">
+                        <strong>Nouvelles possibilités en intelligence et vitesse 🔍</strong> – Les avancées en calcul
+                        quantique peuvent révolutionner la manière dont nous traitons les informations, de la prévision
+                        des
+                        changements climatiques à la modélisation de nouveaux médicaments.
+                    </li>
+                </ul>
+            </li>
+            <button style="cursor: default;">Options
+                Télécharger: </button>
+            <a href="The Present - CGI Awarded short film (2014).mp4" target="_blank"
+                style="text-decoration: none;"><button
+                    style="background: url(download.jpeg); background-size: cover; height: 2rem; width: 8rem; background-repeat: no-repeat;"></button></a>
+            <a href="https://mega.nz/file/5qgEgJrY#03b8je_3EdPXLrZXPMY9_hBNw1DcPwH0OWErn0-IFeI" target="_blank"
+                style="text-decoration: none;"><button
+                    style="background: url(mega.png); background-size: cover; height: 2rem; width: 5rem;"></button></a>
+        </ul>
+        <footer>
+            <p>&copy; 2024. Tous droits réservés.</p>
+            <button id="toggle-video-btn">Afficher Vidéo</button>
+        </footer>
+    </div>
+    <script src="./script.js"></script>
+    <script>
+        // Função para alternar entre o vídeo em background e foreground
+        document.getElementById('toggle-video-btn').addEventListener('click', function () {
+            var video = document.getElementById('bg-video');
+            var button = document.getElementById('toggle-video-btn');
+
+            // Se o vídeo estiver em background (sem controles), mova-o para foreground com controles
+            if (video.classList.contains('foreground')) {
+                video.classList.remove('foreground');
+                video.controls = false; // Desativa controles
+                video.style.zIndex = '-1'; // Volta a ser background
+                button.textContent = 'Mostrar Controles'; // Atualiza texto do botão
+            } else {
+                video.classList.add('foreground');
+                video.controls = true; // Ativa controles
+                video.style.zIndex = '999'; // Fica no topo
+                button.textContent = 'Ocultar Video'; // Atualiza texto do botão
+            }
+        });
+
+        // Função para o loading screen
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('bg-video').style.display = 'inline';
+            },)
+        };
+        // Set the language select value based on the current page
+        const languageSelect = document.getElementById('language-select');
+        const currentPage = window.location.pathname.split('/').pop();
+
+        languageSelect.value = currentPage;
+
+        // Add event listener to change language
+        languageSelect.addEventListener('change', function () {
+            window.location.href = this.value;
+        });
+    </script>
+</body>
+
+</html>
