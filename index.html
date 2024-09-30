@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google" content="notranslate">
+    <meta name="google" content="notranslate"> <!-- Disable translation -->
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
     <title>Evolução dos Sistemas</title>
     <link rel="stylesheet" href="/css/styles.css">
@@ -65,7 +65,7 @@
         .foreground {
             position: fixed;
             height: 80%;
-            z-index: 999;
+            z-index: 99999;
             /* Sobrepõe outros elementos */
         }
 
@@ -74,7 +74,7 @@
             margin-top: 20px;
             position: relative;
             z-index: 1000;
-            /* Garantir que o footer fique acima do vídeo */
+            /* Garantir que o footer fica acima do vídeo */
         }
 
         button {
@@ -90,7 +90,7 @@
         }
     </style>
     <div class="gtranslate_wrapper"></div>
-    <script>window.gtranslateSettings = { "default_language": "pt", "detect_browser_language": true, "languages": ["pt", "fr", "de", "it", "es", "en"], "wrapper_selector": ".gtranslate_wrapper", "switcher_horizontal_position": "right", "switcher_vertical_position": "top", "switcher_text_color": "#f7f7f7", "switcher_arrow_color": "#f2f2f2", "switcher_border_color": "#161616", "switcher_background_color": "#303030", "switcher_background_shadow_color": "#474747", "switcher_background_hover_color": "#3a3a3a", "dropdown_text_color": "#eaeaea", "dropdown_hover_color": "#748393", "dropdown_background_color": "#474747" }</script>
+    <script>window.gtranslateSettings = { "default_language": "pt", "detect_browser_language": false, "languages": ["pt", "fr", "de", "it", "es", "en"], "wrapper_selector": ".gtranslate_wrapper", "switcher_horizontal_position": "right", "switcher_vertical_position": "top", "switcher_text_color": "#f7f7f7", "switcher_arrow_color": "#f2f2f2", "switcher_border_color": "#161616", "switcher_background_color": "#303030", "switcher_background_shadow_color": "#474747", "switcher_background_hover_color": "#3a3a3a", "dropdown_text_color": "#eaeaea", "dropdown_hover_color": "#748393", "dropdown_background_color": "#474747" }</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
 </head>
 
@@ -177,12 +177,14 @@
                         governo regulam a sociedade. Em momentos de crise, como a crise financeira de 2008, sistemas de
                         governo devem responder rapidamente às necessidades da população, demonstrando a eficácia ou
                         ineficácia dos mesmos na manutenção da ordem social.
+                        <img src="/images/sistemas-governo.jpeg" class="img-content" alt="Sistemas de Governo">
                     </li>
                     <li class="main-text">
                         <strong>Estruturação de sociedades e leis ⚖️</strong> – Leis garantem a ordem. No entanto,
                         falhas no sistema legal, como o caso dos abusos de direitos humanos em diversos países, mostram
                         como a implementação e a aplicação das leis podem falhar, levando a conflitos e descontentamento
                         social.
+                        <img src="/images/sociedadeleis.jpeg" class="img-content" alt="Sociedade e Leis">
                     </li>
                 </ul>
             </li>
@@ -319,6 +321,10 @@
     <script>
         // Espera até que o DOM esteja completamente carregado
         document.addEventListener('DOMContentLoaded', function () {
+            var gtranslateWrapper = document.querySelector('.gtranslate_wrapper');
+            var gtranslateScripts = document.querySelectorAll('script[src="https://cdn.gtranslate.net/widgets/latest/dwf.js"]');
+            var gtranslateWrapperOriginalDisplay = gtranslateWrapper ? gtranslateWrapper.style.display : null;
+
             // Function to toggle between background and foreground video
             document.getElementById('toggle-video-btn').addEventListener('click', function () {
                 var video = document.getElementById('bg-video');
@@ -330,11 +336,31 @@
                     video.controls = false; // Disable controls
                     video.style.zIndex = '-1'; // Back to background
                     button.textContent = 'Show Controls'; // Update button text
+
+                    // Restore the gtranslate wrapper
+                    if (gtranslateWrapper) {
+                        gtranslateWrapper.style.display = gtranslateWrapperOriginalDisplay;
+                    }
+
+                    // Restore the gtranslate scripts
+                    gtranslateScripts.forEach(function (script) {
+                        document.body.appendChild(script);
+                    });
                 } else {
                     video.classList.add('foreground');
                     video.controls = true; // Enable controls
                     video.style.zIndex = '999'; // On top
                     button.textContent = 'Hide Video'; // Update button text
+
+                    // Hide the gtranslate wrapper
+                    if (gtranslateWrapper) {
+                        gtranslateWrapper.style.display = 'none';
+                    }
+
+                    // Remove the gtranslate scripts
+                    gtranslateScripts.forEach(function (script) {
+                        script.parentNode.removeChild(script);
+                    });
                 }
             });
 
